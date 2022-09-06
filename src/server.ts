@@ -1,13 +1,14 @@
 import app from './app';
 import http from 'http';
 import logger from './utils/logger';
-
-const PORT: number = 3000;
+import dotenv from 'dotenv';
+dotenv.config();
 
 const server = http.createServer(app);
+const PORT: number = Number(process.env.PORT);
 
 const startServer = async () => {
-  server.listen(PORT, () => {
+  server.listen(PORT || 3000, () => {
     logger.info(`Listening on port ${PORT}`);
   });
 };
