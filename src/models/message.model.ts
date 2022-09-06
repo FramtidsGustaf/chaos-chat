@@ -1,11 +1,5 @@
 import mongoose from 'mongoose';
-
-export interface Message {
-  text: string;
-  author: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { Message } from '../ts/interfaces/db_interfaces';
 
 const messageSchema = new mongoose.Schema<Message>(
   {
